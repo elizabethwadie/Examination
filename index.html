@@ -20,29 +20,11 @@
 <body>
     <a-scene shadow="type: pcfsoft" background="color: #dfefff" fog="type: exponential; color: #dfefff; density: 0.01">
         <a-assets>
-            <!-- Import the extracted .gltf model -->
-            <a-asset-item id="villa-model" src="assets/models/villa/scene.gltf"></a-asset-item>
+            <!-- Import the extracted .glb model -->
+            <a-asset-item id="villa-model" src="assets/models/modern_luxury_villa_house_building.glb"></a-asset-item>
             <a-asset-item id="chandelier-model" src="assets/models/soviet_chandelier_cascade/scene.gltf"></a-asset-item>
 
             <!-- Preloading all textures available -->
-            <img id="tex_below_terrace" src="assets/models/villa/textures/Below_terrace_125Mat_baseColor.png">
-            <img id="tex_bottom_floor" src="assets/models/villa/textures/Bottom_floor_3Mat_baseColor.png">
-            <img id="tex_chimney" src="assets/models/villa/textures/Chimney_18Mat_baseColor.png">
-            <img id="tex_dining" src="assets/models/villa/textures/Dining_Assembly_21_29Mat_baseColor.png">
-            <img id="tex_floor" src="assets/models/villa/textures/Floor_gr_fl_124Mat_baseColor.png">
-            <img id="tex_frame" src="assets/models/villa/textures/Frame_105Mat_baseColor.png">
-            <img id="tex_glass" src="assets/models/villa/textures/Glass_1Mat_baseColor.png">
-            <img id="tex_kitchen" src="assets/models/villa/textures/Kitchen_Assembly_13_128Mat_baseColor.png">
-            <img id="tex_living" src="assets/models/villa/textures/Living_Assemblies_05_452Mat_baseColor.png">
-            <img id="tex_model0" src="assets/models/villa/textures/Model_0Mat_baseColor.png">
-            <img id="tex_office" src="assets/models/villa/textures/Office_Assemblies_18_268Mat_baseColor.png">
-            <img id="tex_piano" src="assets/models/villa/textures/Piano_03_768Mat_baseColor.png">
-            <img id="tex_pictures" src="assets/models/villa/textures/Pictures_and_statue_755Mat_baseColor.png">
-            <img id="tex_terrace" src="assets/models/villa/textures/Terrace_115Mat_baseColor.png">
-            <img id="tex_walls_outside"
-                src="assets/models/villa/textures/Walls_Outside_and_1st_floor_116Mat_baseColor.png">
-            <img id="tex_walls_gr" src="assets/models/villa/textures/Walls_gr_floor_1_100Mat_baseColor.png">
-            <img id="tex_walls_backside" src="assets/models/villa/textures/walls_backside_space_108Mat_baseColor.png">
             <img id="tex_grass" src="assets/grass_new.png">
             <img id="tex_sky" src="assets/sky.png">
             <img id="tex_fence" src="assets/modern_fence.png">
@@ -63,17 +45,7 @@
         <a-light type="directional" position="-5 10 5" color="#fffdf7" intensity="0.9" castShadow="true"></a-light>
         <a-light type="hemisphere" color="#fff6e8" groundColor="#d7cfc2" intensity="0.35"></a-light>
 
-        <!-- Interior villa lighting (layered warm design) -->
-        <a-light type="point" position="0 3 -1" color="#ffe8c4" intensity="1.25" distance="18" decay="2"></a-light>
-        <a-light type="point" position="3 3 -3" color="#ffe4bf" intensity="1.05" distance="16" decay="2"></a-light>
-        <a-light type="point" position="-3 3 -3" color="#ffe4bf" intensity="1.05" distance="16" decay="2"></a-light>
-        <a-light type="point" position="0 3.2 2" color="#ffe8c9" intensity="0.95" distance="16" decay="2"></a-light>
-        <a-light type="spot" position="0 4 0" rotation="-90 0 0" color="#fff1d9" intensity="0.75" angle="38"
-            penumbra="0.5" distance="16"></a-light>
-        <a-light type="spot" position="2.8 3.6 -2.8" rotation="-90 0 0" color="#ffe7cb" intensity="0.56" angle="30"
-            penumbra="0.4" distance="11"></a-light>
-        <a-light type="spot" position="-2.8 3.6 -2.8" rotation="-90 0 0" color="#ffe7cb" intensity="0.56" angle="30"
-            penumbra="0.4" distance="11"></a-light>
+
 
         <!-- Immersive Skybox with panoramic texture -->
         <a-sky src="#tex_sky" radius="1000"></a-sky>
@@ -128,8 +100,8 @@
             <!-- Sleek Cantilever Roof with Underside Trim -->
             <a-box width="24.5" height="0.6" depth="12.5" position="0 3.5 0" material="color: #111; roughness: 0.6"
                 shadow="cast: true; receive: true"></a-box>
-            <a-box width="23.8" height="0.1" depth="11.8" position="0 3.15 0" material="src: #tex_light_wood; repeat: 10 5"
-                shadow="receive: true"></a-box>
+            <a-box width="23.8" height="0.1" depth="11.8" position="0 3.15 0"
+                material="src: #tex_light_wood; repeat: 10 5" shadow="receive: true"></a-box>
 
             <!-- Recessed Garage Lights -->
             <a-light type="point" color="#ffedd6" intensity="1.5" position="-6 3 0" distance="10" decay="2"></a-light>
@@ -146,15 +118,16 @@
                 material="color: #9cc; opacity: 0.3; transparent: true; roughness: 0.1" shadow="cast: false"></a-box>
 
             <!-- Front Steel Pillars -->
-            <a-box width="0.4" height="3.5" depth="0.4" position="-11.8 1.75 5.8"
+            <a-box width="0.4" height="6" depth="0.4" position="-11.8 1.75 5.8"
                 material="color: #222; metalness: 0.8; roughness: 0.2" shadow="cast: true"></a-box>
-            <a-box width="0.4" height="3.5" depth="0.4" position="11.8 1.75 5.8"
+            <a-box width="0.4" height="6" depth="0.4" position="11.8 1.75 5.8"
                 material="color: #222; metalness: 0.8; roughness: 0.2" shadow="cast: true"></a-box>
-            <a-box width="0.4" height="3.5" depth="0.4" position="0 1.75 5.8"
+            <a-box width="0.4" height="6" depth="0.4" position="0 1.75 5.8"
                 material="color: #222; metalness: 0.8; roughness: 0.2" shadow="cast: true"></a-box>
 
             <!-- Porsche Taycan Turbo S (Replacing with BMW Vision) -->
-            <a-entity gltf-model="#car-vision" position="-8.5 0.15 0" rotation="0 180 0" scale="1.2 1.2 1.2" shadow="cast: true; receive: true"></a-entity>
+            <a-entity gltf-model="#car-vision" position="-8.5 0.15 0" rotation="0 180 0" scale="2 2 2"
+                shadow="cast: true; receive: true"></a-entity>
         </a-entity>
 
         <!-- Second Ultra-Modern Architectural Garage (Facing Garage 1) -->
@@ -166,8 +139,8 @@
             <!-- Sleek Cantilever Roof with Underside Trim -->
             <a-box width="24.5" height="0.6" depth="12.5" position="0 3.5 0" material="color: #111; roughness: 0.6"
                 shadow="cast: true; receive: true"></a-box>
-            <a-box width="23.8" height="0.1" depth="11.8" position="0 3.15 0" material="src: #tex_light_wood; repeat: 10 5"
-                shadow="receive: true"></a-box>
+            <a-box width="23.8" height="0.1" depth="11.8" position="0 3.15 0"
+                material="src: #tex_light_wood; repeat: 10 5" shadow="receive: true"></a-box>
 
             <!-- Recessed Garage Lights -->
             <a-light type="point" color="#ffedd6" intensity="1.5" position="-6 3 0" distance="10" decay="2"></a-light>
@@ -178,15 +151,16 @@
                 material="src: #tex_light_wood; repeat: 8 1; roughness: 0.9" shadow="cast: true; receive: true"></a-box>
 
             <!-- Front Steel Pillars -->
-            <a-box width="0.4" height="3.5" depth="0.4" position="-11.8 1.75 5.8"
+            <a-box width="0.4" height="6" depth="0.4" position="-11.8 1.75 5.8"
                 material="color: #222; metalness: 0.8; roughness: 0.2" shadow="cast: true"></a-box>
-            <a-box width="0.4" height="3.5" depth="0.4" position="11.8 1.75 5.8"
+            <a-box width="0.4" height="6" depth="0.4" position="11.8 1.75 5.8"
                 material="color: #222; metalness: 0.8; roughness: 0.2" shadow="cast: true"></a-box>
-            <a-box width="0.4" height="3.5" depth="0.4" position="0 1.75 5.8"
+            <a-box width="0.4" height="6" depth="0.4" position="0 1.75 5.8"
                 material="color: #222; metalness: 0.8; roughness: 0.2" shadow="cast: true"></a-box>
 
             <!-- Cars in Garage 2 (BMW X7) -->
-            <a-entity gltf-model="#car-x7" position="4.5 0.15 0" rotation="0 180 0" scale="1 1 1" shadow="cast: true; receive: true"></a-entity>
+            <a-entity gltf-model="#car-x7" position="4.5 0.15 0" rotation="0 180 0" scale="2 2 2"
+                shadow="cast: true; receive: true"></a-entity>
         </a-entity>
 
         <!-- Driveways connecting garages to the property edge and each other -->
@@ -200,76 +174,11 @@
 
 
         <!-- Place the Main Villa Model in the scene -->
-        <a-entity gltf-model="#villa-model" position="0 0 0" scale="1 1 1" shadow="cast: true; receive: true">
+        <a-entity gltf-model="#villa-model" position="50 0 50" scale="1 1 1" shadow="cast: true; receive: true">
         </a-entity>
 
-        <!-- Interior decoration layer (positioned in villa center) -->
-        <a-entity id="interior-decor" position="0 0 -1.8">
-            <!-- Living-room rug -->
-            <a-circle position="0 0.03 -0.7" rotation="-90 0 0" radius="1.9" color="#d8c7af"
-                material="roughness: 0.95"></a-circle>
-
-            <!-- Modern coffee table -->
-            <a-cylinder position="0 0.2 -0.7" radius="0.55" height="0.06" color="#ece7df"
-                material="metalness: 0.1; roughness: 0.35"></a-cylinder>
-            <a-cylinder position="0 0.1 -0.7" radius="0.12" height="0.2" color="#6d5f52"
-                material="metalness: 0.15; roughness: 0.7"></a-cylinder>
-
-            <!-- Pendant chandelier cluster -->
-            <a-entity gltf-model="#chandelier-model" position="0 3.05 -0.7" scale="0.28 0.28 0.28" rotation="0 25 0"
-                shadow="cast: true; receive: true">
-            </a-entity>
-            <a-light type="point" position="0 2.95 -0.7" color="#ffd7a3" intensity="1.45" distance="14"
-                decay="2"></a-light>
-            <a-light type="point" position="0.6 2.9 -0.5" color="#ffd7a3" intensity="0.82" distance="10"
-                decay="2"></a-light>
-            <a-light type="point" position="-0.6 2.9 -0.9" color="#ffd7a3" intensity="0.82" distance="10"
-                decay="2"></a-light>
-
-            <a-cylinder position="0.45 3.15 -0.45" radius="0.012" height="0.65" color="#2f2c2a"></a-cylinder>
-            <a-sphere position="0.45 2.78 -0.45" radius="0.11" color="#ffe8c8"
-                material="emissive: #ffcf96; emissiveIntensity: 0.45; opacity: 0.9; transparent: true"></a-sphere>
-            <a-light type="point" position="0.45 2.78 -0.45" color="#ffdcae" intensity="0.38" distance="5"
-                decay="2"></a-light>
-
-            <a-cylinder position="-0.45 3.15 -0.95" radius="0.012" height="0.65" color="#2f2c2a"></a-cylinder>
-            <a-sphere position="-0.45 2.78 -0.95" radius="0.11" color="#ffe8c8"
-                material="emissive: #ffcf96; emissiveIntensity: 0.45; opacity: 0.9; transparent: true"></a-sphere>
-            <a-light type="point" position="-0.45 2.78 -0.95" color="#ffdcae" intensity="0.38" distance="5"
-                decay="2"></a-light>
-
-
-            <!-- Floor lamps near seating edges -->
-            <a-cylinder position="1.45 0.95 -1.65" radius="0.035" height="1.8" color="#262626"></a-cylinder>
-            <a-cone position="1.45 1.95 -1.65" radius-bottom="0.22" radius-top="0.08" height="0.38"
-                color="#f0e5d6"></a-cone>
-            <a-light type="point" position="1.45 1.85 -1.65" color="#ffe2ba" intensity="0.52" distance="8"
-                decay="2"></a-light>
-
-            <a-cylinder position="-1.45 0.95 -1.65" radius="0.035" height="1.8" color="#262626"></a-cylinder>
-            <a-cone position="-1.45 1.95 -1.65" radius-bottom="0.22" radius-top="0.08" height="0.38"
-                color="#f0e5d6"></a-cone>
-            <a-light type="point" position="-1.45 1.85 -1.65" color="#ffe2ba" intensity="0.52" distance="8"
-                decay="2"></a-light>
-
-            <!-- Indoor plants -->
-            <a-cylinder position="2.1 0.28 0.25" radius="0.16" height="0.55" color="#d7cab9"></a-cylinder>
-            <a-cone position="2.1 0.95 0.25" radius-bottom="0.42" radius-top="0.05" height="1.1"
-                color="#3c7d4f"></a-cone>
-            <a-cylinder position="-2.15 0.25 0.05" radius="0.15" height="0.5" color="#d7cab9"></a-cylinder>
-            <a-cone position="-2.15 0.88 0.05" radius-bottom="0.38" radius-top="0.04" height="1.0"
-                color="#3a774b"></a-cone>
-
-            <!-- Wall art panels -->
-            <a-plane position="0 1.8 -3.25" width="1.7" height="0.9" color="#ede6da"
-                material="emissive: #9f8f78; emissiveIntensity: 0.1"></a-plane>
-            <a-plane position="0 1.8 -3.23" width="1.5" height="0.7" color="#c8a87d"></a-plane>
-            <a-plane position="2.7 1.75 -1.15" rotation="0 -38 0" width="1.1" height="0.65" color="#dfd5c6"
-                material="emissive: #a39480; emissiveIntensity: 0.08"></a-plane>
-
-            <!-- Corner fill lights to lift dark spots -->
-            <a-light type="point" position="2.4 1.8 0.9" color="#ffe9ca" intensity="0.42" distance="8"
-                decay="2"></a-light>
+        <!-- Corner fill lights to lift dark spots -->
+        <a-light type="point" position="2.4 1.8 0.9" color="#ffe9ca" intensity="0.42" distance="8" decay="2"></a-light>
         </a-entity> <!-- Closing interior-decor -->
 
         <!-- Player Camera with custom cursor -->
